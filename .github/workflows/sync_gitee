@@ -13,7 +13,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
           # 注意替换为你的 GitHub 源仓库地址
-          source-repo: git@https://github.com/ywk1000/gitee-pages-action.git
+          source-repo: git@https://github.com/ywk1000/WPS_daily_check_in.git
           # 注意替换为你的 Gitee 目标仓库地址
           destination-repo: git@https://gitee.com/jydzxt_yuanwk430/WPS_daily_check_in.git
 
