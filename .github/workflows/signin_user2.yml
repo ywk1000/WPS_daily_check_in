@@ -1,0 +1,27 @@
+name: 'user2 check in'
+
+on:
+  push:
+    branches: 
+      - main
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  daily_check_in:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: 'Install requirements'
+        run: pip install -r ./requirements.txt
+      - name: 'Working-invite'
+        run: python WPS_accept_invitation.py
+#       - name: 'Working-signin'
+#         env: 
+#            WPS_SID: ${{secrets.WPS_SID}}
+#         run: python user2.py
